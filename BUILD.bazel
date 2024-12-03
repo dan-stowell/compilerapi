@@ -28,7 +28,7 @@ pkg_tar(
 
 oci_image(
     name = "compilerapi_image",
-    base = "@distroless_base",
+    base = "@distroless_base_debian12_linux_amd64",
     tars = [":compilerapi_tar"],
     entrypoint = ["/compilerapi"],
 )
