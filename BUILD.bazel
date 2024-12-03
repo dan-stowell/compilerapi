@@ -1,0 +1,19 @@
+# BUILD.bazel
+load("@gazelle//:def.bzl", "gazelle")
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+gazelle(name = "gazelle")
+
+go_library(
+    name = "compilerapi_lib",
+    srcs = ["compilerapi.go"],
+    importpath = "github.com/dan-stowell/compilerapi",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_gin_gonic_gin//:gin"],
+)
+
+go_binary(
+    name = "compilerapi",
+    embed = [":compilerapi_lib"],
+    visibility = ["//visibility:public"],
+)

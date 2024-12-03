@@ -1,0 +1,4 @@
+bazel-bin
+bazel-compilerapi
+bazel-out
+bazel-testlogs
